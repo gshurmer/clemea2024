@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "ede21c9e-2b22-4410-b60c-0031ab1543e7",
+		"name": "CLEMEA24 - Delivery Notifications Published",
+		"description": "Postman collection for Cisco Live BRKCOL-2956 demonstration.\n\nWritten by Gavin Shurmer [gavinsh@cisco.com](https://mailto:canewton@Cisco.com) February 2024.  \n  \nGithub Repo: [https://github.com/gshurmer/clemea2024/tree/main](https://github.com/gshurmer/clemea2024/tree/main)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "605265",
+		"_collection_link": "https://grey-capsule-755641.postman.co/workspace/Cisco-Live-EMEA~29d1d8ee-c43f-4c92-bcdd-d7cee60bf913/collection/605265-ede21c9e-2b22-4410-b60c-0031ab1543e7?action=share&source=collection_link&creator=605265"
+	},
+	"item": [
+		{
+			"name": "Resets",
+			"item": [
+				{
+					"name": "Delivery Status Reset WA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deliveryID\" : \"1234\",\r\n    \"status\":\"Reset\",\r\n    \"driverComments\":\"\",\r\n    \"customerComments\":\"\",\r\n    \"customerPhoto\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hooks.eu.webexconnect.io/events/{{YOURWEBHOOK}}",
+							"protocol": "https",
+							"host": [
+								"hooks",
+								"eu",
+								"webexconnect",
+								"io"
+							],
+							"path": [
+								"events",
+								"{{YOURWEBHOOK}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delivery Status Reset Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deliveryID\" : \"2345\",\r\n    \"status\":\"Reset\",\r\n    \"driverComments\":\"\",\r\n    \"customerComments\":\"\",\r\n    \"customerPhoto\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hooks.eu.webexconnect.io/events/{{YOURWEBHOOK}}",
+							"protocol": "https",
+							"host": [
+								"hooks",
+								"eu",
+								"webexconnect",
+								"io"
+							],
+							"path": [
+								"events",
+								"{{YOURWEBHOOK}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Triggers",
+			"item": [
+				{
+					"name": "TMS Notification Trigger - WA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deliveryID\" : \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hooks.eu.webexconnect.io/events/{{YOURWEBHOOK}}",
+							"protocol": "https",
+							"host": [
+								"hooks",
+								"eu",
+								"webexconnect",
+								"io"
+							],
+							"path": [
+								"events",
+								"{{YOURWEBHOOK}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TMS Notification Trigger - Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deliveryID\" : \"2345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hooks.eu.webexconnect.io/events/{{YOURWEBHOOK}}",
+							"protocol": "https",
+							"host": [
+								"hooks",
+								"eu",
+								"webexconnect",
+								"io"
+							],
+							"path": [
+								"events",
+								"{{YOURWEBHOOK}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Status Updates",
+			"item": [
+				{
+					"name": "Delivery Status Update WA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deliveryID\" : \"1234\",\r\n    \"status\":\"Delivered\",\r\n    \"driverComments\":\"public_url_to_driver_image\"\r\n\r\n    // Delivered, Confirmed, Other\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hooks.eu.webexconnect.io/events/{{YOURWEBHOOK}}",
+							"protocol": "https",
+							"host": [
+								"hooks",
+								"eu",
+								"webexconnect",
+								"io"
+							],
+							"path": [
+								"events",
+								"{{YOURWEBHOOK}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delivery Status Update Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deliveryID\" : \"2345\",\r\n    \"status\":\"Delivered\",\r\n    \"driverComments\":\"public_url_to_driver_image\"\r\n\r\n    // Delivered, Confirmed, Other\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hooks.eu.webexconnect.io/events/{{YOURWEBHOOK}}",
+							"protocol": "https",
+							"host": [
+								"hooks",
+								"eu",
+								"webexconnect",
+								"io"
+							],
+							"path": [
+								"events",
+								"{{YOURWEBHOOK}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Misc Requests",
+			"item": [
+				{
+					"name": "Backup Flow Trigger",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deliveryID\" : \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hooks.eu.webexconnect.io/events/{{YOURWEBHOOK}}",
+							"protocol": "https",
+							"host": [
+								"hooks",
+								"eu",
+								"webexconnect",
+								"io"
+							],
+							"path": [
+								"events",
+								"{{YOURWEBHOOK}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Language Selector",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deliveryID\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hooks.eu.webexconnect.io/events/{{YOURWEBHOOK}}",
+							"protocol": "https",
+							"host": [
+								"hooks",
+								"eu",
+								"webexconnect",
+								"io"
+							],
+							"path": [
+								"events",
+								"{{YOURWEBHOOK}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
